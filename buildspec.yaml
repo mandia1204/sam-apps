@@ -15,11 +15,10 @@ phases:
   build:
     commands:
       - echo "Packaging app"
-      - pwd
-      - ls -la
       - cd ..
       - sam package --region us-east-2 --s3-bucket mandia-storage --s3-prefix profile-sam --output-template-file package.yaml
 artifacts:
   files:
     - package.yaml
+  name: profileApp-$(date +%Y-%m-%d-%H%M%S)
     
