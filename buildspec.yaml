@@ -1,0 +1,22 @@
+version: 0.2
+env:
+  # variables:
+  #   DIST_FOLDER: "dist"
+  #   BUILD_ENV: "dev"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre_build:
+    commands:
+      - echo "Install dependencies"
+      - cd get-profile
+      - npm install
+  build:
+    commands:
+      - echo "Packaging app"
+      - sam package --region us-east-2 --s3-bucket mandia-storage --s3-prefix profile-sam
+artifacts:
+  files:
+    - package.yaml
+    
