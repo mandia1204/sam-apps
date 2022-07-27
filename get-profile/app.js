@@ -17,7 +17,7 @@ let response;
 exports.lambdaHandler = async (event, context) => {
     try {
         // const ret = await axios(url);
-        console.log('sending profile :>> ', event);
+        console.log('sending profile V2:>> ', event);
         const profile = {
             userName : 'testUser',
             age: 25,
