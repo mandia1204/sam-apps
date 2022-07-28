@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - echo "Running tests in get-profile"
-      - cd get-profile && npm test && echo "cleaning node_modules" && rm -rf node_modules cd ..
+      - cd get-profile && npm test && echo "cleaning node_modules" && rm -rf node_modules && cd ..
       - echo "Packaging app"
       - sam package --region us-east-2 --s3-bucket mandia-storage --s3-prefix profile-sam --output-template-file package.yaml
 artifacts:
