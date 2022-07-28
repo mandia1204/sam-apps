@@ -9,13 +9,17 @@ phases:
       nodejs: 16
   pre_build:
     commands:
-      - echo "Install dependencies"
+      - echo "Installing get-profile dependencies"
       - cd get-profile
       - npm install
+      - cd ..
+      - echo "Installing post-profile dependencies"
+      - cd post-profile
+      - npm install
+      - cd ..
   build:
     commands:
       - echo "Packaging app"
-      - cd ..
       - sam package --region us-east-2 --s3-bucket mandia-storage --s3-prefix profile-sam --output-template-file package.yaml
 artifacts:
   files:

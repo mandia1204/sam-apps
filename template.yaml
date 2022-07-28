@@ -9,7 +9,6 @@ Description: >
 Globals:
   Function:
     Timeout: 3
-
 Resources:
   GetProfileFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -25,6 +24,20 @@ Resources:
           Properties:
             Path: /
             Method: get
+  PostProfileFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: post-profile/
+      Handler: app.lambdaHandler
+      Runtime: nodejs16.x
+      Architectures:
+        - x86_64
+      Events:
+        PostProfile:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
@@ -36,6 +49,12 @@ Outputs:
   GetProfileFunction:
     Description: "Get Profile Lambda Function ARN"
     Value: !GetAtt GetProfileFunction.Arn
+  PostProfileFunction:
+    Description: "Post Profile Lambda Function ARN"
+    Value: !GetAtt PostProfileFunction.Arn
   GetProfileFunctionIamRole:
     Description: "Implicit IAM Role created Get Profile function"
     Value: !GetAtt GetProfileFunctionRole.Arn
+  PostProfileFunctionIamRole:
+    Description: "Implicit IAM Role created Post Profile function"
+    Value: !GetAtt PostProfileFunctionRole.Arn
