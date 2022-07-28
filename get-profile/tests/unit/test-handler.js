@@ -15,7 +15,7 @@ describe('Tests index', function () {
 
         const expected = {
             userName : 'testUser',
-            age: 25,
+            age: 26,
             logo: 'image1.jpg',
             preferences: []
         };
