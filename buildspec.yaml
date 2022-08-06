@@ -22,5 +22,6 @@ phases:
 artifacts:
   files:
     - package.yaml
+    - appspec.yml
   name: profileApp-$(date +%Y-%m-%d-%H%M%S)
     
