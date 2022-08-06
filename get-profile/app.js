@@ -17,7 +17,7 @@ let response;
 exports.lambdaHandler = async (event, context) => {
     try {
         const profile = {
-            userName : 'testUser',
+            userName : 'testUser updated',
             age: 25,
             logo: 'image1.jpg',
             preferences: []
