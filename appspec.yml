@@ -1,0 +1,19 @@
+version: 0.0
+Resources:
+  - GetProfileFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "GetProfileFunction"
+        Alias: "GetProfileFunctionAlias"
+        CurrentVersion: "1"
+        TargetVersion: "2"
+  - PostProfileFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "PostProfileFunction"
+        Alias: "PostProfileFunctionAlias"
+        CurrentVersion: "1"
+        TargetVersion: "2"
+# Hooks:
+#   - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+#   - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
