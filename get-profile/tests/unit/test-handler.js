@@ -14,7 +14,7 @@ describe('Tests index', function () {
         let body = JSON.parse(result.body);
 
         const expected = {
-            userName : 'testUser',
+            userName : 'testUser updated',
             age: 25,
             logo: 'image1.jpg',
             preferences: []
